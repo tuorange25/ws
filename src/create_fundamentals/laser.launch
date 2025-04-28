@@ -1,0 +1,13 @@
+<launch>
+  <!--<node pkg="hokuyo_node" type="hokuyo_node" name="hokuyo_node">
+  </node>
+  -->
+  <node pkg="urg_node" type="urg_node" name="urg_node">
+  </node>
+
+  <node pkg="laser_filters" type="scan_to_scan_filter_chain" name="laser_filter">
+    <rosparam command="load" file="$(find create_fundamentals)/laser_config.yaml"/>
+  </node>
+  
+  <node name="robot_to_laser" pkg="tf" type="static_transform_publisher" args="0.12 0 0.16 0 0 0 1 /base_link /laser 100" />
+</launch>

@@ -1,0 +1,8 @@
+prefix=/home/orange/orange_ws/install
+
+Name: create_fundamentals
+Description: Description of create_fundamentals
+Version: 1.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: roscpp rospy message_runtime
